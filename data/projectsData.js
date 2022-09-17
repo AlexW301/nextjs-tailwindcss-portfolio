@@ -12,7 +12,7 @@ export const projectsData = [
 		id: 1,
 		title: 'Google Health Platform',
 		url: 'google-health-platform',
-		category: 'Web Application',
+		category: 'Video',
 		img: '/images/web-project-2.jpg',
 		ProjectHeader: {
 			title: 'Google Health Platform',
@@ -34,6 +34,11 @@ export const projectsData = [
 				id: uuidv4(),
 				title: 'Google Health Platform',
 				img: '/images/mobile-project-2.jpg',
+			},
+		],
+		ProjectVideo: [
+			{
+				src: "https://www.youtube.com/embed/_Ju6Q8Azcmg"
 			},
 		],
 		ProjectInfo: {
@@ -138,7 +143,7 @@ export const projectsData = [
 		id: 2,
 		title: 'Phoenix Digital Agency',
 		url: 'phoenix-digital-agency',
-		category: 'Mobile Application',
+		category: 'Video',
 		img: '/images/mobile-project-2.jpg',
 		ProjectHeader: {
 			title: 'Phoenix Digital Agency',
@@ -264,7 +269,7 @@ export const projectsData = [
 		id: 3,
 		title: 'Project Management UI',
 		url: 'project-management-ui',
-		category: 'UI/UX Design',
+		category: 'Photo',
 		img: '/images/ui-project-1.jpg',
 		ProjectHeader: {
 			title: 'Project Management UI',
