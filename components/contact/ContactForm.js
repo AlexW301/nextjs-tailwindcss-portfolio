@@ -7,21 +7,22 @@ function ContactForm() {
 				<form
 					onSubmit={(e) => {
 						e.preventDefault();
+
 					}}
-					className="max-w-xl m-4 p-6 sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl shadow-xl text-left"
+					className="max-w-xl p-6 m-4 text-left shadow-xl sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl"
 				>
-					<p className="font-general-medium text-primary-dark dark:text-primary-light text-2xl mb-8">
+					<p className="mb-8 text-2xl font-general-medium text-primary-dark dark:text-primary-light">
 						Contact Form
 					</p>
 					<div className="font-general-regular">
 						<label
-							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							className="block mb-2 text-lg text-primary-dark dark:text-primary-light"
 							htmlFor="name"
 						>
 							Full Name
 						</label>
 						<input
-							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+							className="w-full px-5 py-2 border border-gray-300 border-opacity-50 rounded-md shadow-sm dark:border-primary-dark text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark text-md"
 							id="name"
 							name="name"
 							type="text"
@@ -32,13 +33,13 @@ function ContactForm() {
 					</div>
 					<div className="mt-6">
 						<label
-							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							className="block mb-2 text-lg text-primary-dark dark:text-primary-light"
 							htmlFor="email"
 						>
 							Email
 						</label>
 						<input
-							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+							className="w-full px-5 py-2 border border-gray-300 border-opacity-50 rounded-md shadow-sm dark:border-primary-dark text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark text-md"
 							id="email"
 							name="email"
 							type="text"
@@ -49,13 +50,13 @@ function ContactForm() {
 					</div>
 					<div className="mt-6">
 						<label
-							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							className="block mb-2 text-lg text-primary-dark dark:text-primary-light"
 							htmlFor="subject"
 						>
 							Subject
 						</label>
 						<input
-							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+							className="w-full px-5 py-2 border border-gray-300 border-opacity-50 rounded-md shadow-sm dark:border-primary-dark text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark text-md"
 							id="subject"
 							name="subject"
 							type="text"
@@ -67,13 +68,13 @@ function ContactForm() {
 
 					<div className="mt-6">
 						<label
-							className="block text-lg text-primary-dark dark:text-primary-light mb-2"
+							className="block mb-2 text-lg text-primary-dark dark:text-primary-light"
 							htmlFor="message"
 						>
 							Message
 						</label>
 						<textarea
-							className="w-full px-5 py-2 border border-gray-300 dark:border-primary-dark border-opacity-50 text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark rounded-md shadow-sm text-md"
+							className="w-full px-5 py-2 border border-gray-300 border-opacity-50 rounded-md shadow-sm dark:border-primary-dark text-primary-dark dark:text-secondary-light bg-ternary-light dark:bg-ternary-dark text-md"
 							id="message"
 							name="message"
 							cols="14"
@@ -83,7 +84,7 @@ function ContactForm() {
 					</div>
 
 					<div className="mt-6">
-						<span className="font-general-medium  px-7 py-4 text-white text-center font-medium tracking-wider bg-indigo-500 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900 rounded-lg mt-6 duration-500">
+						<span className="py-4 mt-6 font-medium tracking-wider text-center text-white duration-500 bg-indigo-500 rounded-lg font-general-medium px-7 hover:bg-indigo-600 focus:ring-1 focus:ring-indigo-900">
 							<Button
 								title="Send Message"
 								type="submit"

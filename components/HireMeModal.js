@@ -89,7 +89,7 @@ function HireMeModal({ onClose, onRequest }) {
 
                 <div className="pb-4 mt-6 sm:pb-1">
                   <span
-                    onClick={onRequest}
+                    // onClick={onRequest}
                     type="submit"
                     className="px-4
 											sm:px-6
