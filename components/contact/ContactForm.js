@@ -1,14 +1,31 @@
 import Button from '../reusable/Button';
+import { useState } from 'react';
 
 function ContactForm() {
+	const [name, setName] = useState();
+	const [email, setEmail] = useState();
+	const [subject, setSubject] = useState();
+	const [message, setMessage] = useState();
+
+	async function handleSubmit() {
+		e.preventDefault();
+		const res = await fetch("/api/contact", {
+			method: "POST",
+			headers: { "Content-Type": "application/json" },
+			body: JSON.stringify({
+			  name,
+			  email,
+			  subject,
+			  message
+			}),
+		  });
+		  const data = await res.json()
+	}
 	return (
 		<div className="w-full lg:w-1/2">
 			<div className="leading-loose">
 				<form
-					onSubmit={(e) => {
-						e.preventDefault();
-
-					}}
+					onSubmit={handleSubmit}
 					className="max-w-xl p-6 m-4 text-left shadow-xl sm:p-10 bg-secondary-light dark:bg-secondary-dark rounded-xl"
 				>
 					<p className="mb-8 text-2xl font-general-medium text-primary-dark dark:text-primary-light">
@@ -27,6 +44,8 @@ function ContactForm() {
 							name="name"
 							type="text"
 							required
+							value={name}
+							onChange={(e) => {setName(e.target.value)}}
 							placeholder="Your Name"
 							aria-label="Name"
 						/>
@@ -44,6 +63,8 @@ function ContactForm() {
 							name="email"
 							type="text"
 							required
+							value={email}
+							onChange={(e) => {setEmail(e.target.value)}}
 							placeholder="Your Email"
 							aria-label="Email"
 						/>
@@ -61,6 +82,8 @@ function ContactForm() {
 							name="subject"
 							type="text"
 							required
+							value={subject}
+							onChange={(e) => {setSubject(e.target.value)}}
 							placeholder="Subject"
 							aria-label="Subject"
 						/>
@@ -78,6 +101,8 @@ function ContactForm() {
 							id="message"
 							name="message"
 							cols="14"
+							value={message}
+							onChange={(e) => {setMessage(e.target.value)}}
 							rows="6"
 							aria-label="Message"
 						></textarea>
