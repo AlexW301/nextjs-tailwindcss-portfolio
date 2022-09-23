@@ -5,10 +5,10 @@ import { aboutMeData } from '../../data/aboutMeData';
 function AboutMeBio() {
 	const [aboutMe, setAboutMe] = useState(aboutMeData);
 	return (
-		<div className="block sm:flex sm:gap-10 mt-10 sm:mt-20">
+		<div className="block mt-10 sm:flex sm:gap-10 sm:mt-20">
 			<div className="w-full sm:w-1/4 mb-7 sm:mb-0">
 				<Image
-					src="/images/profile.jpeg"
+					src="/images/jared-headshot-square.jpg"
 					width={200}
 					height={200}
 					className="rounded-lg"
@@ -16,10 +16,10 @@ function AboutMeBio() {
 				/>
 			</div>
 
-			<div className="font-general-regular w-full sm:w-3/4 text-left">
+			<div className="w-full text-left font-general-regular sm:w-3/4">
 				{aboutMe.map((bio) => (
 					<p
-						className="mb-4 text-ternary-dark dark:text-ternary-light text-lg"
+						className="mb-4 text-lg text-ternary-dark dark:text-ternary-light"
 						key={bio.id}
 					>
 						{bio.bio}

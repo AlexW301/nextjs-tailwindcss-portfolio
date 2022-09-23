@@ -130,7 +130,7 @@ function AppHeader() {
 					<div className="pt-3 border-t-2 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
 						<button
 							onClick={showHireMeModal}
-							className="block w-24 px-4 py-2 mt-2 text-left text-white duration-300 bg-[#7AAABE] rounded-sm shadow-sm font-general-medium sm:hidden text-md hover:bg-indigo-600"
+							className="block w-24 px-4 py-2 mt-2 text-left text-white duration-300 bg-[#7AAABE] rounded-sm shadow-sm font-general-medium sm:hidden text-md"
 							aria-label="Hire Me Button"
 						>
 							Hire Me

@@ -42,6 +42,7 @@ function useScrollToTop() {
 					borderRadius: 50,
 					right: 50,
 					bottom: 50,
+					backgroundColor: '#366173',
 					display: showScroll ? 'flex' : 'none',
 				}}
 			/>

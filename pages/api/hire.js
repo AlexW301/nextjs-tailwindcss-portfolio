@@ -1,7 +1,7 @@
 const nodemailer = require("nodemailer");
 
 export default async function handler(req, res) {
-    const { name, email, subject, message } =
+    const { name, email, service, message } =
       req.body;
   
     // SEND EMAIL NOTIFICATION
@@ -22,7 +22,7 @@ export default async function handler(req, res) {
       html: `
             <p>From: ${name}</p>
             <p>Email: ${email}</p>
-            <p>Subject: ${subject}</p>
+            <p>Service: ${service}</p>
             <p>Message: ${message}</p>
             </body>
               `, // html body

@@ -1,13 +1,41 @@
 import { motion } from "framer-motion";
 import { FiX } from "react-icons/fi";
 import Button from "./reusable/Button";
+import { useState } from "react";
+import toast, { Toaster } from "react-hot-toast";
 
 const selectOptions = ["Video", "Photo"];
 
 function HireMeModal({ onClose, onRequest }) {
-  function handleSubmit(e) {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [service, setService] = useState("Video");
+  const [message, setMessage] = useState("");
+
+  async function handleSubmit(e) {
     e.preventDefault();
-	console.log('yres')
+
+    const res = await fetch("/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        name,
+        email,
+        service,
+        message,
+      }),
+    });
+    const data = await res.json();
+
+    if (data.status === 200) {
+      toast.success("Sent!");
+	  setName("")
+	  setEmail("")
+	  setService("Video")
+	  setMessage("")
+    } else {
+      toast.error("Something went wrong!");
+    }
   }
   return (
     <motion.div
@@ -21,6 +49,13 @@ function HireMeModal({ onClose, onRequest }) {
 
       {/* Modal Content */}
       <main className="flex flex-col items-center justify-center w-full h-full">
+      <Toaster
+        toastOptions={{
+          style: {
+            fontSize: "16px",
+          },
+        }}
+      />
         <div className="z-30 flex items-center modal-wrapper">
           <div className="relative flex-row max-w-md max-h-screen mx-5 rounded-lg shadow-lg modal xl:max-w-xl lg:max-w-xl md:max-w-xl bg-secondary-light dark:bg-primary-dark">
             <div className="flex justify-between gap-10 p-5 border-b modal-header border-ternary-light dark:border-ternary-dark">
@@ -42,6 +77,10 @@ function HireMeModal({ onClose, onRequest }) {
                     id="name"
                     name="name"
                     type="text"
+                    value={name}
+                    onChange={(e) => {
+                      setName(e.target.value);
+                    }}
                     required
                     placeholder="Name"
                     aria-label="Name"
@@ -53,6 +92,10 @@ function HireMeModal({ onClose, onRequest }) {
                     id="email"
                     name="email"
                     type="text"
+                    value={email}
+                    onChange={(e) => {
+                      setEmail(e.target.value);
+                    }}
                     required
                     placeholder="Email"
                     aria-label="Email"
@@ -65,10 +108,11 @@ function HireMeModal({ onClose, onRequest }) {
                     name="subject"
                     type="text"
                     required
+                    onChange={(e) => {setService(e.target.value)}}
                     aria-label="Project Category"
                   >
                     {selectOptions.map((option) => (
-                      <option className="text-normal sm:text-md" key={option}>
+                      <option value={option} className="text-normal sm:text-md" key={option}>
                         {option}
                       </option>
                     ))}
@@ -82,6 +126,10 @@ function HireMeModal({ onClose, onRequest }) {
                     name="message"
                     cols="14"
                     rows="6"
+                    value={message}
+                    onChange={(e) => {
+                      setMessage(e.target.value);
+                    }}
                     aria-label="Details"
                     placeholder="Project description"
                   ></textarea>
@@ -96,8 +144,7 @@ function HireMeModal({ onClose, onRequest }) {
 											py-2
 											sm:py-2.5
 											text-white
-											bg-indigo-500
-											hover:bg-indigo-600
+                      bg-[#366173] hover:bg-[#264a5a]
 											rounded-md
 											focus:ring-1 focus:ring-indigo-900 duration-500"
                     aria-label="Submit Request"
