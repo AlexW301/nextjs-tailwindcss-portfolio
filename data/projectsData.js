@@ -10,7 +10,7 @@ import {
 export const projectsData = [
 	{
 		id: 1,
-		title: 'Google Health Platform',
+		title: 'Change TEst',
 		url: 'google-health-platform',
 		category: 'Video',
 		img: '/images/web-project-2.jpg',
